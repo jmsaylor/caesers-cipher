@@ -8,17 +8,14 @@ const range = (start, end, length = end - start + 1) =>
 class Cipher {
   constructor(original) {
     this.original = [...original];
-  }
 
-  encrypt() {
-    let array = String.fromCharCode(...range(97, 122));
-    let encrypted = [];
-    this.original = this.original.map(letter => {
-      encrypted.push(array.indexOf(letter) + 13);
+    let alphabet = String.fromCharCode(...range(97, 122));
+
+    this.encrypted = this.original.forEach(letter => {
+      alphabet.indexOf(letter);
     });
   }
 }
-
 let cipher = new Cipher("hello");
-cipher.encrypt();
-console.log(cipher.original);
+// cipher.encrypt();
+console.log(cipher);
