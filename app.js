@@ -9,15 +9,29 @@ function range(start, end) {
 
 class Cipher {
   constructor([...original]) {
-    let alphabet = [...String.fromCharCode(...range(97, 122))];
-    console.log(typeof alphabet);
+    this.alphabet = [...String.fromCharCode(...range(97, 122))];
     this.encrypted = [];
     original.forEach(letter => {
-      this.encrypted.push(alphabet.indexOf(letter) + 13);
+      this.encrypted.push(this.alphabet.indexOf(letter) + 13);
+    });
+    this.encrypted = this.encrypted.map(letter => {
+      letter += 97;
+      return String.fromCharCode(letter);
     });
   }
-  decode() {}
+  decode() {
+    let decrypted = this.encrypted.map(letter => {
+      let index = this.alphabet.indexOf(letter);
+      return index - 13;
+    });
+    decrypted = decrypted.map(letter => {
+      return this.alphabet[letter];
+    });
+    console.log(decrypted);
+  }
 }
-let cipher = new Cipher("abc");
+let cipher = new Cipher("zoo");
 
-console.log(cipher);
+console.log(cipher.encrypted);
+
+cipher.decode();

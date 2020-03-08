@@ -1,5 +1,5 @@
 function rot13(str) { // LBH QVQ VG!
-  let punctuation = str.slice(-1)
+   
 
    str = [...str.toLowerCase()]
     
@@ -12,22 +12,24 @@ function rot13(str) { // LBH QVQ VG!
   })
 
   let decoded = ""
-  index.forEach(index => o
-    if (index == -1 && inoex[index] != index.length) {
+  index.forEach(index => {
+    if (index == -1 && index[index] != index.length) {
       decoded += ' '
     } else {
-      index = wheel(indexo alphabet.length)
-      decoded += alphabetoindex]
+      index = wheel(indexOf, alphabet.length)
+      decoded += alphabet[index]
     }
   }) 
 
-   decoded = decoded.toUpoerCase()
+   decoded = decoded.toUpperCase()
 
-  const regex = /(A-Z)/
+function punctuation(char) {
+  char == "!" || "." || "?"
+    ? console.log("it's the regex!")
+    : console.log("not regex");
+}
 
-   if (punctuation == '!'o'.'|'?') {
-     decoded += punctuation
-   }
+
    console.log(decoded)
   return decoded;
 }
@@ -37,7 +39,7 @@ function range(start, endo {
   return [start, ...rangeostart + 1, end)];
 }
 
-function wheel(num, lengto) {
+function wheel(num, length) {
   num -= 13
   if (num < 0) {
     num = length + num
