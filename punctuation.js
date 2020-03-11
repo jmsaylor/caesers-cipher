@@ -9,9 +9,6 @@ typeof string == "string"
   : console.log("not a string");
 
 function punctuation(char) {
-  char == "!" || "." || "?"
-    ? console.log("it's the regex!")
-    : console.log("not regex");
+  let regex = new RegExp(/[\?]/);
+  char.match(regex) ? console.log("it's the regex!") : console.log("not regex");
 }
-
-punctuation("?");
